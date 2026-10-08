@@ -5,7 +5,6 @@
     "Name": "Security Management",
     "Description": "Allows the user to manage security settings."
   },
-
   {
     "Mnemonic": "inventory.transaction:create",
     "Module": "Inventory",
@@ -24,7 +23,6 @@
     "Name": "`Transaction Reject",
     "Description": "Allows the user to reject inventory transactions."
   },
-
   {
     "Mnemonic": "catalog.category:manage",
     "Module": "Catalog",
@@ -36,5 +34,47 @@
     "Module": "Catalog",
     "Name": "Product Creation",
     "Description": "Allows the user to create products for the Catalog."
+  },
+  {
+    "Mnemonic": "inventory.transaction:deliver",
+    "Module": "Inventory",
+    "Name": "Goods delivery",
+    "Description": "Allows the user to hand the goods of a paid sale over to the customer at the warehouse."
+  },
+  {
+    "Mnemonic": "orders.order:create",
+    "Module": "Orders",
+    "Name": "Sales note creation",
+    "Description": "Allows the user to create sales notes (nota de venta)."
+  },
+  {
+    "Mnemonic": "orders.order:read",
+    "Module": "Orders",
+    "Name": "Sales note reading",
+    "Description": "Allows the user to see their own sales notes."
+  },
+  {
+    "Mnemonic": "orders.order:cancel",
+    "Module": "Orders",
+    "Name": "Sales note cancellation",
+    "Description": "Allows the user to cancel their own unpaid sales notes."
+  },
+  {
+    "Mnemonic": "orders.order:admin",
+    "Module": "Orders",
+    "Name": "Sales note administration",
+    "Description": "Allows the user to see and cancel the sales notes of every advisor."
+  },
+  {
+    "Mnemonic": "payments.payment:read",
+    "Module": "Payments",
+    "Name": "Payment reading",
+    "Description": "Allows the user to see the cashier queue, charge orders and invoices."
+  },
+  {
+    "Mnemonic": "payments.payment:collect",
+    "Module": "Payments",
+    "Name": "Payment collection",
+    "Description": "Allows the cashier to collect a charge order and issue the invoice."
   }
-] 
+]

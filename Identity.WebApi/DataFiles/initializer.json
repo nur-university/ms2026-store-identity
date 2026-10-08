@@ -3,18 +3,103 @@
     {
       "role": "Administrator",
       "permissions": [
-        { "permission": "identity.user:admin" },
-        { "permission": "inventory.transaction:create" },
-        { "permission": "inventory.transaction:approve" },
-        { "permission": "inventory.transaction:reject" },
-        { "permission": "catalog.category:manage" },
-        { "permission": "catalog.product:create" },
-        { "permission": "catalog.product:create" }
+        {
+          "permission": "identity.user:admin"
+        },
+        {
+          "permission": "inventory.transaction:create"
+        },
+        {
+          "permission": "inventory.transaction:approve"
+        },
+        {
+          "permission": "inventory.transaction:reject"
+        },
+        {
+          "permission": "catalog.category:manage"
+        },
+        {
+          "permission": "catalog.product:create"
+        },
+        {
+          "permission": "inventory.transaction:deliver"
+        },
+        {
+          "permission": "orders.order:create"
+        },
+        {
+          "permission": "orders.order:read"
+        },
+        {
+          "permission": "orders.order:cancel"
+        },
+        {
+          "permission": "orders.order:admin"
+        },
+        {
+          "permission": "payments.payment:read"
+        },
+        {
+          "permission": "payments.payment:collect"
+        }
+      ]
+    },
+    {
+      "role": "SalesAdvisor",
+      "permissions": [
+        {
+          "permission": "orders.order:create"
+        },
+        {
+          "permission": "orders.order:read"
+        },
+        {
+          "permission": "orders.order:cancel"
+        }
+      ]
+    },
+    {
+      "role": "SalesSupervisor",
+      "permissions": [
+        {
+          "permission": "orders.order:create"
+        },
+        {
+          "permission": "orders.order:read"
+        },
+        {
+          "permission": "orders.order:cancel"
+        },
+        {
+          "permission": "orders.order:admin"
+        },
+        {
+          "permission": "payments.payment:read"
+        }
+      ]
+    },
+    {
+      "role": "Cashier",
+      "permissions": [
+        {
+          "permission": "payments.payment:read"
+        },
+        {
+          "permission": "payments.payment:collect"
+        }
+      ]
+    },
+    {
+      "role": "WarehouseClerk",
+      "permissions": [
+        {
+          "permission": "inventory.transaction:deliver"
+        }
       ]
     }
   ],
   "defaultUser": {
-    "userroles" : [
+    "userroles": [
       {
         "role": "Administrator"
       }
