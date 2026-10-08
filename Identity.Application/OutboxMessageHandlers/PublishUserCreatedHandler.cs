@@ -1,4 +1,4 @@
-﻿using Identity.Application.Events;
+using Identity.Application.Events;
 using Joseco.Communication.External.Contracts.Services;
 using MediatR;
 using Joseco.Outbox.Contracts.Model;
@@ -11,7 +11,7 @@ internal class PublishUserCreatedHandler(IExternalPublisher bus) : INotification
     {
         Nur.Store2026.Integration.Identity.UserCreated integrationEvent = new(notification.Content.UserId,
             notification.Content.FullName,
-            notification.Content.Email);
+            notification.Content.Email) { Id = notification.Content.Id };
 
         await bus.PublishAsync(integrationEvent);
     }
