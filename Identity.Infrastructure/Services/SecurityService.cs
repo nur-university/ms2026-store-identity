@@ -1,5 +1,6 @@
 ﻿using Identity.Application.Events;
 using Identity.Application.Services;
+using Identity.Infrastructure.Observability;
 using Identity.Infrastructure.Persistence.StoredModel;
 using Joseco.Outbox.Contracts.Model;
 using Joseco.Outbox.Contracts.Service;
@@ -31,6 +32,7 @@ internal class SecurityService(UserManager<ApplicationUser> _userManager, SignIn
             if (user == null)
             {
                 _logger.LogWarning("Email {email} is not registered", username);
+                IdentityMetrics.LoginAttempt("unknown_user");
                 return Result.Failure<string>(new Error("Login.Error", "Email or Password incorrect", ErrorType.Problem));
             }
         }
@@ -38,12 +40,18 @@ internal class SecurityService(UserManager<ApplicationUser> _userManager, SignIn
         if (!user.Active)
         {
             _logger.LogWarning("{username} is not active", username);
+            IdentityMetrics.LoginAttempt("inactive");
             return Result.Failure<string>(new Error("Login.Error", "Email or Password incorrect", ErrorType.Problem));
         }
         var signInResult = await _signInManager.PasswordSignInAsync(user, password, false, true);
+        if (!signInResult.Succeeded)
+        {
+            IdentityMetrics.LoginAttempt(signInResult.IsLockedOut ? "locked_out" : "invalid_credentials");
+        }
         if (signInResult.Succeeded)
         {
             _logger.LogInformation("{username} has logged in", username);
+            IdentityMetrics.LoginAttempt("success");
             var jwt = await GenerateJwt(user);
             return Result.Success<string>(jwt);
         }
