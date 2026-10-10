@@ -42,6 +42,12 @@
     "Description": "Allows the user to hand the goods of a paid sale over to the customer at the warehouse."
   },
   {
+    "Mnemonic": "inventory.transaction:read",
+    "Module": "Inventory",
+    "Name": "Inventory queries",
+    "Description": "Allows the user to query inventory transactions, item stock and item movements (kardex)."
+  },
+  {
     "Mnemonic": "orders.order:create",
     "Module": "Orders",
     "Name": "Sales note creation",

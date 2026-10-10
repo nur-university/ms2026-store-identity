@@ -44,6 +44,9 @@
         },
         {
           "permission": "orders.order:override"
+        },
+        {
+          "permission": "inventory.transaction:read"
         }
       ]
     },
@@ -100,6 +103,29 @@
       "permissions": [
         {
           "permission": "inventory.transaction:deliver"
+        },
+        {
+          "permission": "inventory.transaction:create"
+        },
+        {
+          "permission": "inventory.transaction:read"
+        }
+      ]
+    },
+    {
+      "role": "InventoryManager",
+      "permissions": [
+        {
+          "permission": "inventory.transaction:create"
+        },
+        {
+          "permission": "inventory.transaction:approve"
+        },
+        {
+          "permission": "inventory.transaction:reject"
+        },
+        {
+          "permission": "inventory.transaction:read"
         }
       ]
     }
