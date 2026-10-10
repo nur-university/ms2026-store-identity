@@ -41,6 +41,9 @@
         },
         {
           "permission": "payments.payment:collect"
+        },
+        {
+          "permission": "orders.order:override"
         }
       ]
     },
@@ -75,6 +78,9 @@
         },
         {
           "permission": "payments.payment:read"
+        },
+        {
+          "permission": "orders.order:override"
         }
       ]
     },

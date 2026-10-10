@@ -76,5 +76,11 @@
     "Module": "Payments",
     "Name": "Payment collection",
     "Description": "Allows the cashier to collect a charge order and issue the invoice."
+  },
+  {
+    "Mnemonic": "orders.order:override",
+    "Module": "Orders",
+    "Name": "Sales note override",
+    "Description": "Allows a supervisor to annul a paid sale whose goods were never picked up."
   }
 ]
