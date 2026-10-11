@@ -12,7 +12,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.3" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.4" />
 
-    <PackageReference Include="Joseco.DDD.Core" Version="1.0.0" Condition="!Exists('$(MSBuildThisFileDirectory)..\..\..\Utils\Joseco.App.Core\src\Joseco.DDD.Core\Joseco.DDD.Core.csproj')" />
+    <PackageReference Include="Joseco.DDD.Core" Version="1.0.3" Condition="!Exists('$(MSBuildThisFileDirectory)..\..\..\Utils\Joseco.App.Core\src\Joseco.DDD.Core\Joseco.DDD.Core.csproj')" />
     <ProjectReference Include="$(MSBuildThisFileDirectory)..\..\..\Utils\Joseco.App.Core\src\Joseco.DDD.Core\Joseco.DDD.Core.csproj" Condition="Exists('$(MSBuildThisFileDirectory)..\..\..\Utils\Joseco.App.Core\src\Joseco.DDD.Core\Joseco.DDD.Core.csproj')" />
     <PackageReference Include="Nur.Store2026.Integration" Version="1.0.0" Condition="!Exists('$(MSBuildThisFileDirectory)..\..\..\SharedKernel\Nur.Store2026.Integration\src\Nur.Store2026.Integration\Nur.Store2026.Integration.csproj')" />
     <ProjectReference Include="$(MSBuildThisFileDirectory)..\..\..\SharedKernel\Nur.Store2026.Integration\src\Nur.Store2026.Integration\Nur.Store2026.Integration.csproj" Condition="Exists('$(MSBuildThisFileDirectory)..\..\..\SharedKernel\Nur.Store2026.Integration\src\Nur.Store2026.Integration\Nur.Store2026.Integration.csproj')" />
